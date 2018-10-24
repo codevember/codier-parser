@@ -1,0 +1,13 @@
+{
+  "name": "codier-parser",
+  "version": "1.0.0",
+  "description": "Codier.io search parser to save contributions",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Valentin Daguenet <valentin.daguenet@gmail.com> (http://vdaguenet.fr/)",
+  "license": "MIT",
+  "dependencies": {
+    "backend-api": "github:codevember/backend-api",
+    "phantom": "^6.0.3"
+  }
+}
