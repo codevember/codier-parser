@@ -52,10 +52,16 @@ function onContentLoaded (content, resolve) {
 
       if (!author) continue
 
+      var image = '/static/default.jpg'
+      if ($items[i].hasAttribute('data-thumbnail')) {
+        image = $items[i].getAttribute('data-thumbnail')
+      }
+
       res.push({
         author: $items[i].querySelector('.creation__user a').getAttribute('href'),
         url: $items[i].querySelector('.creation__link').getAttribute('href'),
-        title: $items[i].querySelector('.creation__heading').innerHTML.trim()
+        title: $items[i].querySelector('.creation__heading').innerHTML.trim(),
+        image: image
       })
     }
 
@@ -80,7 +86,6 @@ function formatData (data) {
   data.forEach((creation) => {
     creation.author = creation.author.replace('/@', '')
     creation.day = getDay(creation.title)
-    creation.image = ''
     creation.title = creation.title.replace(/(#)?codevember/gi, '').trim()
     creation.url = 'https://codier.io' + creation.url
   })
